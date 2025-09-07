@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystic Mike's Magical Massages</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .logo-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .step {
+            display: none;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .step.active {
+            display: block;
+        }
+        /* Custom radio button styles */
+        .michael-radio:checked + label {
+            border-color: #a78bfa;
+            box-shadow: 0 0 15px rgba(167, 139, 250, 0.5);
+            transform: translateY(-4px);
+        }
+        .service-checkbox:checked + label {
+            border-color: #a78bfa;
+        }
+        .payment-checkbox:checked + label {
+            border-color: #a78bfa;
+            background-color: #3730a3;
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-indigo-900 via-gray-900 to-purple-900">
+
+    <main id="booking-app" class="w-full max-w-3xl mx-auto bg-gray-800 bg-opacity-70 backdrop-blur-md rounded-2xl shadow-2xl p-6 sm:p-10 text-center relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-purple-500 rounded-full opacity-20 blur-2xl"></div>
+        <div class="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-48 h-48 bg-indigo-500 rounded-full opacity-20 blur-2xl"></div>
+
+        <!-- Header -->
+        <header class="mb-8">
+            <h1 class="logo-font text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">
+                Mystic Mike's
+            </h1>
+            <p class="logo-font text-lg text-indigo-200">Magical Massages</p>
+            <p class="text-sm text-gray-400 mt-2">Open 9pm 'til late, exclusively for the amazing Lauren.</p>
+        </header>
+
+        <!-- Form Steps -->
+        <form id="massage-form">
+            <!-- Step 0: Welcome -->
+            <div id="step-0" class="step active fade-in">
+                <h2 class="text-2xl font-semibold text-purple-300 mb-4">Your Escape Awaits...</h2>
+                <p class="text-gray-300 mb-8 max-w-xl mx-auto">Your journey from 'frazzled' to 'fabulous' begins now. Every session is a full MOT for the soul, including our legendary Back, Hand, Foot, and Knee massage. Let's tailor the rest of the magic...</p>
+                <button type="button" class="next-btn-step bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 w-full sm:w-auto">
+                    Let's Do This
+                </button>
+            </div>
+
+            <!-- Step 1: Choose Your Michael -->
+            <div id="step-1" class="step fade-in">
+                <h2 class="text-2xl font-semibold text-purple-300 mb-6">Summon Your Michael</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div><input type="radio" name="michael" id="mystic" value="Mystic Michael" class="hidden michael-radio" required><label for="mystic" class="block bg-gray-700 p-4 rounded-lg border-2 border-transparent hover:border-purple-400 cursor-pointer transition-all duration-300"><h3 class="font-bold text-lg text-purple-300">Mystic Michael</h3><p class="text-sm text-gray-400">Wise and spiritual. Focuses on energy flow, gentle strokes, and may offer unsolicited life advice.</p></label></div>
+                    <div><input type="radio" name="michael" id="mighty" value="Mighty Michael" class="hidden michael-radio"><label for="mighty" class="block bg-gray-700 p-4 rounded-lg border-2 border-transparent hover:border-purple-400 cursor-pointer transition-all duration-300"><h3 class="font-bold text-lg text-purple-300">Mighty Michael</h3><p class="text-sm text-gray-400">Wielder of the mighty elbow. Finds knots you've been saving since 2012. You'll thank him tomorrow.</p></label></div>
+                    <div><input type="radio" name="michael" id="musical" value="Musical Michael" class="hidden michael-radio"><label for="musical" class="block bg-gray-700 p-4 rounded-lg border-2 border-transparent hover:border-purple-400 cursor-pointer transition-all duration-300"><h3 class="font-bold text-lg text-purple-300">Musical Michael</h3><p class="text-sm text-gray-400">Massage to a beat. Might hum along (quality not guaranteed, but the effort is there).</p></label></div>
+                    <div><input type="radio" name="michael" id="meticulous" value="Meticulous Michael" class="hidden michael-radio"><label for="meticulous" class="block bg-gray-700 p-4 rounded-lg border-2 border-transparent hover:border-purple-400 cursor-pointer transition-all duration-300"><h3 class="font-bold text-lg text-purple-300">Meticulous Michael</h3><p class="text-sm text-gray-400">Precise and detailed. Basically a detective for tension. No knot is safe.</p></label></div>
+                </div>
+            </div>
+
+            <!-- Step 2: Mystical Extras -->
+            <div id="step-2" class="step fade-in">
+                 <h2 class="text-2xl font-semibold text-purple-300 mb-6">Fancy a Bit Extra?</h2>
+                 <p class="text-sm text-gray-400 mb-4">Enhance your experience with these optional add-ons.</p>
+                 <div class="grid grid-cols-2 sm:grid-cols-2 gap-3 text-base">
+                    <div><input type="checkbox" name="extras" id="e1" value="Indian Head Massage" class="hidden service-checkbox"><label for="e1" class="block bg-gray-700 p-3 rounded-lg border-2 border-transparent hover:border-purple-400 cursor-pointer transition-all duration-300">Indian Head Massage</label></div>
+                    <div><input type="checkbox" name="extras" id="e2" value="Palm Reading" class="hidden service-checkbox"><label for="e2" class="block bg-gray-700 p-3 rounded-lg border-2 border-transparent hover:border-purple-400 cursor-pointer transition-all duration-300">Palm Reading</label></div>
+                    <div class="col-span-2"><input type="checkbox" name="extras" id="e7" value="Bedtime Story & Lullaby" class="hidden service-checkbox"><label for="e7" class="block bg-gray-700 p-3 rounded-lg border-2 border-transparent hover:border-purple-400 cursor-pointer transition-all duration-300">Bedtime Story & Lullaby</label></div>
+                 </div>
+            </div>
+
+            <!-- Step 3: Bedtime Story Creator -->
+            <div id="step-3" class="step fade-in">
+                 <h2 class="text-2xl font-semibold text-purple-300 mb-6">Weave Your Bedtime Tale</h2>
+                 <p class="text-sm text-gray-400 mb-4">You've requested a story, so let's make it a legendary one. Answer the questions below to set the scene.</p>
+                 <div class="space-y-4 text-left">
+                     <div>
+                         <label for="story-hero" class="block mb-1 text-indigo-200">Who is the hero of our story?</label>
+                         <input type="text" id="story-hero" name="story-hero" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-2 text-white" placeholder="e.g., A brave queen named Lauren...">
+                     </div>
+                     <div>
+                         <label for="story-location" class="block mb-1 text-indigo-200">Where does their adventure take place?</label>
+                         <input type="text" id="story-location" name="story-location" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-2 text-white" placeholder="e.g., In a kingdom made of clouds...">
+                     </div>
+                     <div>
+                         <label for="story-quest" class="block mb-1 text-indigo-200">What is their noble quest?</label>
+                         <input type="text" id="story-quest" name="story-quest" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-2 text-white" placeholder="e.g., To find the legendary Slipper of Infinite Comfort...">
+                     </div>
+                 </div>
+            </div>
+
+            <!-- Step 4: Ambiance -->
+            <div id="step-4" class="step fade-in">
+                <h2 class="text-2xl font-semibold text-purple-300 mb-6">Set the Mood</h2>
+                <div class="space-y-6">
+                    <div><label for="music" class="block mb-2 text-lg text-indigo-200">Soundtrack to Serenity</label><select id="music" name="music" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-white focus:ring-purple-500 focus:border-purple-500"><option>Calming Whale Songs</option><option>Ethereal Soundscapes</option><option>90s R&B Slow Jams</option><option>Rain on a Tin Roof</option><option>The Sweet Sound of Silence</option></select></div>
+                    <div><label for="lighting" class="block mb-2 text-lg text-indigo-200">Mood Lighting</label><div class="flex items-center justify-center gap-2 bg-gray-700 p-2 rounded-lg"><span id="dim-btn" class="text-sm cursor-pointer hover:text-purple-300 p-2">Dim</span><input id="lighting" name="lighting" type="color" value="#a855f7" class="w-full h-10 rounded-md border-none bg-transparent cursor-pointer appearance-none" style="-webkit-appearance: none;"><span id="bright-btn" class="text-sm cursor-pointer hover:text-purple-300 p-2">Bright</span></div></div>
+                </div>
+            </div>
+
+            <!-- Step 5: Area of Focus -->
+            <div id="step-5" class="step fade-in">
+                 <h2 class="text-2xl font-semibold text-purple-300 mb-6">The Tactical Map</h2>
+                 <p class="text-sm text-gray-400 mb-4">Pinpoint the epicentres of ouch.</p>
+                 <textarea id="focus-area" name="focus-area" rows="4" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-white focus:ring-purple-500 focus:border-purple-500" placeholder="e.g., 'My left shoulder from carrying the weight of the world, my neck from phone-scrolling, and my lower back for reasons unknown.'"></textarea>
+            </div>
+
+            <!-- Step 6: Payment -->
+            <div id="step-6" class="step fade-in">
+                <h2 class="text-2xl font-semibold text-purple-300 mb-6">The Price of Paradise</h2>
+                <p class="text-sm text-gray-400 mb-4">Please select your preferred method(s) of compensation.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-left max-h-[60vh] overflow-y-auto p-2">
+                    <div><input type="checkbox" name="payment" id="p1" value="A perfectly brewed cup of tea" class="hidden payment-checkbox"><label for="p1" class="block bg-gray-700 p-3 rounded-lg border-2 border-transparent hover:border-indigo-400 cursor-pointer">A perfect cup of tea</label></div>
+                    <div><input type="checkbox" name="payment" id="p2" value="A curated selection of superior biscuits" class="hidden payment-checkbox"><label for="p2" class="block bg-gray-700 p-3 rounded-lg border-2 border-transparent hover:border-indigo-400 cursor-pointer">A selection of superior biscuits</label></div>
+                    <div><input type="checkbox" name="payment" id="p3" value="Undying gratitude & affection" class="hidden payment-checkbox"><label for="p3" class="block bg-gray-700 p-3 rounded-lg border-2 border-transparent hover:border-indigo-400 cursor-pointer">Undying gratitude & affection</label></div>
+                    <div><input type="checkbox" name="payment" id="p4" value="Total control of the TV remote (no vetoes)" class="hidden payment-checkbox"><label for="p4" class="block bg-gray-700 p-3 rounded-lg border-2 border-transparent hover:border-indigo-400 cursor-pointer">Total remote control</label></div>
+                    <div><input type="checkbox" name="payment" id="p5" value="Sole custody of the duvet" class="hidden payment-checkbox"><label for="p5" class="block bg-gray-700 p-3 rounded-lg border-2 border-transparent hover:border-indigo-400 cursor-pointer">Sole custody of the duvet</label></div>
+                    <div><input type="checkbox" name="payment" id="p7" value="One hour of uninterrupted peace" class="hidden payment-checkbox"><label for="p7" class="block bg-gray-700 p-3 rounded-lg border-2 border-transparent hover:border-indigo-400 cursor-pointer">One hour of peace</label></div>
+                    <div><input type="checkbox" name="payment" id="p8" value="Doing the next 'big shop'" class="hidden payment-checkbox"><label for="p8" class="block bg-gray-700 p-3 rounded-lg border-2 border-transparent hover:border-indigo-400 cursor-pointer">Doing the next 'big shop'</label></div>
+                    <div><input type="checkbox" name="payment" id="p9" value="Cleaning the bathroom (properly)" class="hidden payment-checkbox"><label for="p9" class="block bg-gray-700 p-3 rounded-lg border-2 border-transparent hover:border-indigo-400 cursor-pointer">Cleaning the bathroom (properly)</label></div>
+                    <div><input type="checkbox" name="payment" id="p10" value="A foot rub IOU (no questions asked)" class="hidden payment-checkbox"><label for="p10" class="block bg-gray-700 p-3 rounded-lg border-2 border-transparent hover:border-indigo-400 cursor-pointer">A foot rub IOU</label></div>
+                    <div><input type="checkbox" name="payment" id="p11" value="Letting you win the next argument" class="hidden payment-checkbox"><label for="p11" class="block bg-gray-700 p-3 rounded-lg border-2 border-transparent hover:border-indigo-400 cursor-pointer">Letting you win the next argument</label></div>
+                    <div><input type="checkbox" name="payment" id="p12" value="A bacon butty delivered in bed" class="hidden payment-checkbox"><label for="p12" class="block bg-gray-700 p-3 rounded-lg border-2 border-transparent hover:border-indigo-400 cursor-pointer">A bacon butty in bed</label></div>
+                    <div><input type="checkbox" name="payment" id="p13" value="Bin duty for an entire month" class="hidden payment-checkbox"><label for="p13" class="block bg-gray-700 p-3 rounded-lg border-2 border-transparent hover:border-indigo-400 cursor-pointer">Bin duty for a month</label></div>
+                    <div><input type="checkbox" name="payment" id="p15" value="Unlimited compliments for 12 hours" class="hidden payment-checkbox"><label for="p15" class="block bg-gray-700 p-3 rounded-lg border-2 border-transparent hover:border-indigo-400 cursor-pointer">Unlimited compliments</label></div>
+                    <div><input type="checkbox" name="payment" id="p17" value="A treaty: 'You Were Right After All'" class="hidden payment-checkbox"><label for="p17" class="block bg-gray-700 p-3 rounded-lg border-2 border-transparent hover:border-indigo-400 cursor-pointer">A 'You Were Right' treaty</label></div>
+                    <div><input type="checkbox" name="payment" id="p18" value="The last Rolo" class="hidden payment-checkbox"><label for="p18" class="block bg-gray-700 p-3 rounded-lg border-2 border-transparent hover:border-indigo-400 cursor-pointer">The last Rolo</label></div>
+                    <div><input type="checkbox" name="payment" id="p19" value="One 'Get Out of Jail Free' card" class="hidden payment-checkbox"><label for="p19" class="block bg-gray-700 p-3 rounded-lg border-2 border-transparent hover:border-indigo-400 cursor-pointer">'Get Out of Jail Free' card</label></div>
+                    <!-- Other option -->
+                    <div class="sm:col-span-2">
+                        <input type="checkbox" name="payment" id="p-other" value="other" class="hidden payment-checkbox"><label for="p-other" class="block bg-gray-700 p-3 rounded-lg border-2 border-transparent hover:border-indigo-400 cursor-pointer">Other (Negotiable. Let's talk.)</label>
+                        <input type="text" id="other-payment-text" name="other-payment" class="w-full bg-gray-900 border border-gray-600 rounded-lg p-3 mt-2 text-white focus:ring-purple-500 focus:border-purple-500 hidden" placeholder="State your generous offer...">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Screen -->
+            <div id="step-7" class="step fade-in">
+                <h2 class="text-2xl font-semibold text-purple-300 mb-4">Your Decree of Deserved Indulgence</h2>
+                <p class="text-gray-400 mb-6">Your request is ready! Click the button below to send the detailed scroll directly to Management's secure messaging service.</p>
+                <div id="summary-output" class="text-left bg-gray-900 p-6 rounded-lg border border-purple-500 space-y-3 mb-6">
+                    <!-- Summary will be injected here -->
+                </div>
+                <a id="whatsapp-link" href="#" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 w-full sm:w-auto inline-flex items-center justify-center">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.31 20.6C8.75 21.41 10.36 21.85 12.04 21.85C17.5 21.85 21.95 17.4 21.95 11.94C21.95 6.48 17.5 2 12.04 2M12.04 3.65C16.56 3.65 20.2 7.29 20.2 11.81C20.2 16.33 16.56 19.97 12.04 19.97C10.5 19.97 9.03 19.56 7.75 18.82L7.12 18.46L4.72 19.12L5.4 16.8L5.03 16.14C4.18 14.73 3.78 13.11 3.78 11.47C3.78 7.29 7.42 3.65 12.04 3.65M8.53 7.33C8.34 7.33 8.16 7.39 8.01 7.55L7.2 8.36C7.05 8.52 6.9 8.73 6.9 8.94C6.9 9.16 6.95 9.37 7.04 9.57C7.13 9.77 7.29 10.04 7.5 10.34C7.91 10.91 8.53 11.66 9.32 12.45C10.11 13.24 10.86 13.86 11.43 14.27C11.73 14.48 12 14.64 12.2 14.73C12.4 14.82 12.61 14.87 12.83 14.87C13.04 14.87 13.25 14.72 13.41 14.57L14.22 13.76C14.38 13.6 14.59 13.46 14.8 13.46C15.01 13.46 15.22 13.55 15.39 13.73L16.9 15.24C17.15 15.49 17.24 15.81 17.11 16.08L16.2 17.23C16.01 17.49 15.71 17.65 15.39 17.65C15.11 17.65 14.85 17.58 14.56 17.44C13.8 17.08 12.91 16.54 11.96 15.82C10.91 14.99 10.05 13.93 9.43 12.9C8.93 12.08 8.63 11.23 8.54 10.63C8.42 10.06 8.39 9.56 8.39 9.14C8.39 8.77 8.5 8.42 8.76 8.16L9.42 7.5C9.58 7.34 9.52 7.33 9.33 7.33H8.53Z"></path></svg>
+                    Send to Michael
+                </a>
+                 <p class="text-xs text-gray-500 mt-6">Terms and conditions apply. All payments are due upon completion of services. No refunds for snoring.</p>
+            </div>
+
+            <!-- Navigation -->
+            <div id="navigation-buttons" class="mt-10 flex justify-between items-center" style="display: none;">
+                <button type="button" id="prev-btn" class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-6 rounded-lg transition-transform transform hover:scale-105">
+                    Go Back
+                </button>
+                <button type="button" id="next-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 ml-auto">
+                    Next Step
+                </button>
+                <button type="submit" id="submit-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-transform transform hover:scale-105" style="display: none;">
+                    Book the Bliss
+                </button>
+            </div>
+        </form>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const steps = Array.from(document.querySelectorAll('.step'));
+            const nextButton = document.getElementById('next-btn');
+            const prevButton = document.getElementById('prev-btn');
+            const submitButton = document.getElementById('submit-btn');
+            const form = document.getElementById('massage-form');
+            const navContainer = document.getElementById('navigation-buttons');
+            const otherPaymentCheckbox = document.getElementById('p-other');
+            const otherPaymentText = document.getElementById('other-payment-text');
+            const lightingInput = document.getElementById('lighting');
+            const dimBtn = document.getElementById('dim-btn');
+            const brightBtn = document.getElementById('bright-btn');
+            const bedtimeStoryCheckbox = document.getElementById('e7');
+
+            let currentStep = 0;
+
+            const updateButtons = () => {
+                if (currentStep === 0 || currentStep >= steps.length - 1) {
+                    navContainer.style.display = 'none';
+                } else {
+                    navContainer.style.display = 'flex';
+                }
+                
+                prevButton.style.display = (currentStep > 1) ? 'inline-block' : 'none';
+                nextButton.style.display = (currentStep < steps.length - 2) ? 'inline-block' : 'none';
+                submitButton.style.display = (currentStep === steps.length - 2) ? 'inline-block' : 'none';
+            };
+            
+            const showStep = (stepIndex) => {
+                steps.forEach((step, index) => {
+                    step.classList.toggle('active', index === stepIndex);
+                });
+                currentStep = stepIndex;
+                updateButtons();
+            };
+
+            const validateStep = (stepIndex) => {
+                const currentStepElement = steps[stepIndex];
+                const requiredRadios = currentStepElement.querySelectorAll('input[type="radio"][required]');
+                
+                if (stepIndex === 6) { // Payment step validation (updated step index)
+                    const paymentCheckboxes = form.querySelectorAll('input[name="payment"]:checked');
+                    if (paymentCheckboxes.length === 0) {
+                        alert('Please select at least one payment method to continue.');
+                        return false;
+                    }
+                    if (otherPaymentCheckbox.checked && !otherPaymentText.value.trim()){
+                         alert('Please state your "Other" offer to continue.');
+                        return false;
+                    }
+                }
+
+                for (const radio of requiredRadios) {
+                    const groupName = radio.name;
+                    const group = form.querySelectorAll(`input[name="${groupName}"]`);
+                    if (!Array.from(group).some(r => r.checked)) {
+                        alert('Please make a selection to continue.');
+                        return false;
+                    }
+                }
+                
+                return true;
+            };
+
+            document.querySelector('.next-btn-step').addEventListener('click', () => {
+                showStep(1);
+            });
+
+            nextButton.addEventListener('click', () => {
+                if (!validateStep(currentStep)) return;
+
+                // Conditional step for bedtime story
+                if (currentStep === 2 && !bedtimeStoryCheckbox.checked) {
+                    showStep(currentStep + 2); // Skip story step
+                } else if (currentStep < steps.length - 1) {
+                    showStep(currentStep + 1);
+                }
+            });
+
+            prevButton.addEventListener('click', () => {
+                // Conditional step for bedtime story
+                if (currentStep === 4 && !bedtimeStoryCheckbox.checked) {
+                     showStep(currentStep - 2); // Skip back over story step
+                } else if (currentStep > 0) {
+                    showStep(currentStep - 1);
+                }
+            });
+            
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                if (validateStep(currentStep)) {
+                    generateSummary();
+                    showStep(steps.length - 1);
+                }
+            });
+            
+            form.addEventListener('change', (e) => {
+                if (e.target.name === 'payment' && e.target.id === 'p-other') {
+                    if (otherPaymentCheckbox.checked) {
+                        otherPaymentText.style.display = 'block';
+                        otherPaymentText.required = true;
+                    } else {
+                        otherPaymentText.style.display = 'none';
+                        otherPaymentText.required = false;
+                        otherPaymentText.value = '';
+                    }
+                }
+            });
+
+            const generateSummary = () => {
+                const formData = new FormData(form);
+                const summaryOutput = document.getElementById('summary-output');
+                const whatsappLink = document.getElementById('whatsapp-link');
+                
+                const extras = Array.from(form.querySelectorAll('input[name="extras"]:checked')).map(cb => cb.value).join(', ') || 'None';
+                const lightingColor = formData.get('lighting');
+                
+                const paymentCheckboxes = form.querySelectorAll('input[name="payment"]:checked');
+                const paymentValues = Array.from(paymentCheckboxes).map(cb => {
+                    if (cb.value === 'other') {
+                        return formData.get('other-payment') || 'A custom offer';
+                    }
+                    return cb.value;
+                });
+
+                const paymentSummary = paymentValues.join(' & ') || 'None';
+                
+                let storyDetailsHtml = '';
+                let storyDetailsText = '';
+                if (bedtimeStoryCheckbox.checked) {
+                    const hero = formData.get('story-hero') || 'a mysterious hero';
+                    const location = formData.get('story-location') || 'a curious land';
+                    const quest = formData.get('story-quest') || 'a secret quest';
+                    storyDetailsHtml = `<p><strong>Bedtime Story:</strong> <span class="text-indigo-300">A tale about ${hero}, in ${location}, on ${quest}.</span></p>`;
+                    storyDetailsText = `*Bedtime Story:*\nA tale about ${hero}, in ${location}, on ${quest}.\n\n`;
+                }
+
+                const summaryHtml = `
+                    <p><strong>Massage Therapist:</strong> <span class="text-indigo-300">${formData.get('michael')}</span></p>
+                    <p><strong>Standard Treatments:</strong> <span class="text-indigo-300">Back, Hand, Foot & Knee Massage</span></p>
+                    <p><strong>Mystical Extras:</strong> <span class="text-indigo-300">${extras}</span></p>
+                    ${storyDetailsHtml}
+                    <p><strong>Ambiance - Music:</strong> <span class="text-indigo-300">${formData.get('music')}</span></p>
+                    <p><strong>Ambiance - Lighting:</strong> <span class="flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full" style="background-color: ${lightingColor};"></span>
+                        <span class="text-indigo-300">${lightingColor}</span>
+                    </span></p>
+                    <p><strong>Special Focus Areas:</strong> <span class="text-indigo-300">${formData.get('focus-area') || 'None specified'}</span></p>
+                    <hr class="border-gray-600 my-3">
+                    <p><strong>Agreed Payment(s):</strong> <span class="text-purple-300 font-bold">${paymentSummary}</span></p>
+                `;
+                
+                const summaryText = `
+*Mystic Mike's Massage Order for Lauren*
+-----------------------------------
+*Therapist:* ${formData.get('michael')}
+*Standard Treatments:* Back, Hand, Foot & Knee Massage
+*Mystical Extras:* ${extras}
+
+${storyDetailsText}*Ambiance:*
+- Music: ${formData.get('music')}
+- Lighting: ${lightingColor}
+
+*Special Focus Areas:*
+${formData.get('focus-area') || 'None specified'}
+
+-----------------------------------
+*Agreed Payment(s):*
+${paymentSummary}
+                `;
+
+                summaryOutput.innerHTML = summaryHtml;
+                whatsappLink.href = `https://wa.me/447402073721?text=${encodeURIComponent(summaryText.trim())}`;
+            };
+
+            // Initialize
+            showStep(0);
+
+            dimBtn.addEventListener('click', () => {
+                lightingInput.value = '#4c1d95'; // Dark Indigo
+            });
+
+            brightBtn.addEventListener('click', () => {
+                lightingInput.value = '#d8b4fe'; // Bright Lavender
+            });
+        });
+
+    </script>
+</body>
+</html>
+
+
+
