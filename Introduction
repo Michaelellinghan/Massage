@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Mystic Mike's</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .logo-font {
+            font-family: 'Playfair Display', serif;
+        }
+         .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-indigo-900 via-gray-900 to-purple-900">
+
+    <main class="w-full max-w-3xl mx-auto bg-gray-800 bg-opacity-70 backdrop-blur-md rounded-2xl shadow-2xl p-6 sm:p-10 text-center relative overflow-hidden fade-in">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-purple-500 rounded-full opacity-20 blur-2xl"></div>
+        <div class="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-48 h-48 bg-indigo-500 rounded-full opacity-20 blur-2xl"></div>
+
+        <!-- Header -->
+        <header class="mb-8">
+            <h1 class="logo-font text-4xl sm:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">
+                Mystic Mike's
+            </h1>
+            <p class="logo-font text-xl text-indigo-200">Magical Massages</p>
+        </header>
+
+        <!-- Welcome Content -->
+        <div class="space-y-6 text-gray-300">
+            <h2 class="text-2xl font-semibold text-purple-300">The Grotto of Calm is Open</h2>
+            <div class="max-w-xl mx-auto space-y-4 text-left">
+                <p>
+                    Welcome, Lauren. Within these mystical walls, stress melts away and tranquility reigns supreme. We specialise in bespoke massage experiences designed to soothe the body and spirit of the most deserving wives, mothers, and wondrous women.
+                </p>
+                <p>
+                    Every session includes our signature 'Four Corners' treatment—a revitalising massage of the back, hands, feet, and knees. For those seeking deeper magic, we offer extras like Indian head massages, insightful palm readings, and custom-crafted bedtime stories.
+                </p>
+                 <p>
+                    Your journey will be guided by one of our four resident masters of massage, each a Michael with his own unique approach to the art of relaxation. Your destiny awaits.
+                </p>
+            </div>
+            
+            <div>
+                 <a href="mystic-mikes-massages.html" class="mt-6 inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-10 rounded-lg shadow-lg transition-transform transform hover:scale-105 w-full sm:w-auto">
+                    Enter the Sanctuary
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>
+
+
