@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystic Mike's - Meet the Michaels</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .logo-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-4 bg-gradient-to-br from-indigo-900 via-gray-900 to-purple-900">
+
+    <div class="w-full max-w-5xl mx-auto">
+        <header class="text-center my-8 fade-in">
+            <h1 class="logo-font text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">
+                The Masters of Massage
+            </h1>
+            <p class="text-lg text-indigo-200">Choose your champion of calm...</p>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 gap-8 fade-in" style="animation-delay: 0.2s;">
+            
+            <!-- Mystic Michael -->
+            <div class="bg-gray-800 bg-opacity-70 backdrop-blur-md rounded-xl shadow-lg p-6 text-center flex flex-col">
+                <h2 class="logo-font text-3xl text-purple-300">Mystic Michael</h2>
+                <p class="italic text-gray-400 mb-4">The Spiritualist</p>
+                <p class="text-gray-300 flex-grow">With a gentle touch and an aura that hums with calming energy, Mystic Michael focuses on the flow of energy as much as the muscles. He claims to have learned his technique by watching a very relaxed sloth for three years.</p>
+                <div class="mt-6 pt-4 border-t border-gray-700">
+                    <h3 class="font-bold text-indigo-200">Specialty</h3>
+                    <p class="text-sm text-gray-400">Aligning your chakras with a well-placed elbow.</p>
+                    <h3 class="font-bold text-indigo-200 mt-2">Signature Move</h3>
+                    <p class="text-sm text-gray-400">The Ethereal Effleurage.</p>
+                </div>
+            </div>
+
+            <!-- Mighty Michael -->
+            <div class="bg-gray-800 bg-opacity-70 backdrop-blur-md rounded-xl shadow-lg p-6 text-center flex flex-col">
+                <h2 class="logo-font text-3xl text-purple-300">Mighty Michael</h2>
+                <p class="italic text-gray-400 mb-4">The Engineer</p>
+                <p class="text-gray-300 flex-grow">For knots so stubborn they have their own postcode, there is Mighty Michael. His qualifications include being able to open any jar on the first try. He views tension as a structural problem in need of a firm solution.</p>
+                <div class="mt-6 pt-4 border-t border-gray-700">
+                    <h3 class="font-bold text-indigo-200">Specialty</h3>
+                    <p class="text-sm text-gray-400">Deep tissue work that borders on an exorcism.</p>
+                    <h3 class="font-bold text-indigo-200 mt-2">Signature Move</h3>
+                    <p class="text-sm text-gray-400">The Knot Obliterator.</p>
+                </div>
+            </div>
+
+            <!-- Meticulous Michael -->
+            <div class="bg-gray-800 bg-opacity-70 backdrop-blur-md rounded-xl shadow-lg p-6 text-center flex flex-col">
+                <h2 class="logo-font text-3xl text-purple-300">Meticulous Michael</h2>
+                <p class="italic text-gray-400 mb-4">The Architect</p>
+                <p class="text-gray-300 flex-grow">No muscle is left unturned. Meticulous Michael approaches massage with the precision of a Swiss watchmaker. He owns a label maker and isn't afraid to use it. Prepare for a systematic dismantling of all your aches.</p>
+                <div class="mt-6 pt-4 border-t border-gray-700">
+                    <h3 class="font-bold text-indigo-200">Specialty</h3>
+                    <p class="text-sm text-gray-400">Finding muscles you didn't know you had and telling them to relax.</p>
+                    <h3 class="font-bold text-indigo-200 mt-2">Signature Move</h3>
+                    <p class="text-sm text-gray-400">The Pinpoint Pressure Point Protocol.</p>
+                </div>
+            </div>
+
+            <!-- Magic Michael -->
+            <div class="bg-gray-800 bg-opacity-70 backdrop-blur-md rounded-xl shadow-lg p-6 text-center flex flex-col">
+                <h2 class="logo-font text-3xl text-purple-300">Magic Michael</h2>
+                <p class="italic text-gray-400 mb-4">The Entertainer</p>
+                <p class="text-gray-300 flex-grow">Why just have a massage when you can have a full-blown performance? Magic Michael brings the showmanship. With a dazzling routine of rhythmic deep-tissue work and fluid, hypnotic movements, he doesn't just work out your knots—he entertains them into submission. It's a captivating experience from start to finish, complete with a show-stopping grand finale that will leave your tension begging for an encore. Now you see the knot... now you don't.</p>
+                <div class="mt-6 pt-4 border-t border-gray-700">
+                    <h3 class="font-bold text-indigo-200">Specialty</h3>
+                    <p class="text-sm text-gray-400">Choreographed knot removal and percussive therapy.</p>
+                    <h3 class="font-bold text-indigo-200 mt-2">Signature Move</h3>
+                    <p class="text-sm text-gray-400">The Rhythmic Release Routine.</p>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="text-center my-8">
+            <a href="index.html" class="inline-block bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                ← Back to the Sanctuary
+            </a>
+        </footer>
+    </div>
+
+</body>
+</html>
+
+
