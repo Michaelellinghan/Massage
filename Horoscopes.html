@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystic Mike's - The Oracle's Outlook</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .logo-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-indigo-900 via-gray-900 to-purple-900">
+
+    <div class="w-full max-w-3xl mx-auto">
+        <header class="text-center my-8 fade-in">
+            <h1 class="logo-font text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">
+                The Oracle's Outlook
+            </h1>
+            <p class="text-lg text-indigo-200">A daily prophecy, just for Lauren.</p>
+        </header>
+
+        <main class="fade-in" style="animation-delay: 0.5s;">
+            <div class="bg-gray-800 bg-opacity-70 backdrop-blur-md rounded-xl shadow-2xl p-8 min-h-[200px] flex items-center justify-center">
+                <p id="horoscope-text" class="text-center text-xl text-indigo-200 leading-relaxed"></p>
+            </div>
+        </main>
+
+        <footer class="text-center my-8">
+            <a href="index.html" class="inline-block bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                ← Back to the Sanctuary
+            </a>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const prophecies = [
+                "Looks like a certain little man named George, fresh from his big school adventures, might need a piggyback ride today. Your reward for this heroic feat? Mighty Michael is on standby for a shoulder rub.",
+                "You might feel a touch of magic in the air today, a bit like that day at Highclere Castle. If not, don't worry. Mystic Michael suggests putting on some Bublé and seeing what happens.",
+                "Be warned, your energy levels might be tested by a very cute, tiny person named Ivy today. The universe has prescribed a hand massage to help you recharge.",
+                "Don't be surprised if you find yourself thinking about your UWE days in Bristol. For any lingering tension from student life, Magic Michael is ready to make it disappear.",
+                "Your wedding anniversary is on the 27th of July. The outlook is good for a day of relaxation. Booking a session in advance would be a very wise move.",
+                "Today's forecast predicts a mountain of laundry. Your destiny is to ignore it and head for the sofa. Meticulous Michael will be ready to deal with any backache that results from this noble act of self-care.",
+                "A text from your mum, Anne, could bring a smile to your face today. Use that good energy! It's the perfect fuel for receiving a foot massage.",
+                "Remember how you and Michael met on Plenty of Fish back in 2014? Today's a good day to channel that early-days energy with a shared cup of tea and zero stress.",
+                "Thinking back to Newark Town Hall in 2018 is sure to bring a smile. Why not recreate that joy with a bedtime story and lullaby, delivered by a professional?",
+                "The cosmos suggests dropping your sister, Kate, a funny message. The good karma you get will surely translate into an extra five minutes of Indian Head Massage.",
+                "George has been at big school for a little while now! You deserve a medal. Or, at the very least, a tension-free neck and shoulders.",
+                "Little Ivy's energy (born 4th Jan 2025!) is powerful today. A palm reading might just reveal she's destined to be a queen... or at least someone who eventually sleeps through the night.",
+                "The vibe in Nottingham is good today. A walk might be nice, but let's be honest, the best destination is a comfy chair and a Michael of your choice.",
+                "That special song, 'Everything', is your power anthem. Listening to it today might just magically summon a back rub.",
+                "You give so much of yourself looking after two small children. The universe demands balance. Tonight, balance will be restored with a knee massage and full control of the TV remote.",
+                "Remember the 13th of Feb 2021, when a great little man arrived? He's bound to do something adorable today that makes you forget how tired you are. A massage will sort out the 'tired' part, though."
+            ];
+
+            const horoscopeElement = document.getElementById('horoscope-text');
+            const randomIndex = Math.floor(Math.random() * prophecies.length);
+            horoscopeElement.textContent = prophecies[randomIndex];
+        });
+    </script>
+</body>
+</html>
+
+
